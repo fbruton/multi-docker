@@ -20,3 +20,19 @@ after_success:
   - docker push fbruton/multi-nginx
   - docker push fbruton/multi-server
   - docker push fbruton/multi-worker
+
+deploy:
+  edge: true
+  provider: elasticbeanstalkk
+  region: us-east-1
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-us-east-1-102938868915
+  bucket_path: docker-multi
+
+on:
+  branch: master
+
+access_key_id: $AWS_ACCESS_KEY
+secret_access_key: $AWS_SECRET_KEY
+
