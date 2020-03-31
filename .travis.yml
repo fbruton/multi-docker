@@ -23,7 +23,7 @@ after_success:
 
 deploy:
   edge: true
-  provider: elasticbeanstalkk
+  provider: elasticbeanstalk
   region: us-east-1
   app: mulit-docker
   env: MulitDocker-env
